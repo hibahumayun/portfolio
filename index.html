@@ -39,18 +39,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.4rem 3.5rem;
-    background: linear-gradient(to bottom, rgba(14,12,11,0.95), transparent);
+    padding: 1.2rem 3.5rem;
+    background: linear-gradient(to bottom, rgba(14,12,11,0.98), transparent);
     backdrop-filter: blur(0px);
   }
 
   .nav-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-style: italic;
     color: var(--parchment);
     letter-spacing: 0.02em;
     text-decoration: none;
+    max-width: 220px;
+    line-height: 1.3;
   }
 
   .nav-links {
@@ -92,6 +94,7 @@
   }
 
   .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -147,28 +150,6 @@
 
   .hero-cta .arrow { transition: transform 0.3s; }
   .hero-cta:hover .arrow { transform: translateX(4px); }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    right: 3.5rem;
-    writing-mode: vertical-rl;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--parchment-dim);
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .hero-scroll::after {
-    content: '';
-    width: 1px;
-    height: 3.5rem;
-    background: var(--saffron);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
 
   @keyframes scrollPulse {
     0%, 100% { opacity: 0.3; }
@@ -840,7 +821,6 @@
     <li><a href="#audio">Audio</a></li>
     <li><a href="#photography">Photography</a></li>
     <li><a href="#hire">Work Together</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -848,10 +828,9 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <p class="hero-eyebrow">Audio Journalist · Photographer · Historian</p>
-  <h1 class="hero-headline">Every person carries an <em>unfinished story.</em></h1>
-  <p class="hero-sub">I make documentary audio about Desi lives — trained as a historian, working as a journalist, always drawn to the person that the record forgot to name.</p>
-  <a href="#photography" class="hero-cta">Explore the work <span class="arrow">→</span></a>
-  <div class="hero-scroll">Scroll</div>
+  <h1 class="hero-headline">Every person has a story.</h1>
+  <p class="hero-sub">I document the stories around me — trained as a historian, working as a journalist, I am drawn to narratives that are often pushed to the margins.</p>
+  <a href="#audio" class="hero-cta">Explore the work <span class="arrow">→</span></a>
 </section>
 
 <!-- ABOUT -->
@@ -859,11 +838,11 @@
   <p class="section-label">About</p>
   <div class="about reveal">
     <div class="about-statement">
-      History is made by millions of people whose names never entered the archive. I have spent my career trying to correct that.
+      History includes those named in the narratives as well as those silenced in the archive. I aim to bring the latter to the forefront.
     </div>
     <div class="about-body">
-      <p>My academic training is in history — in the practice of listening to silences, reading against the grain of official records, and understanding that what gets preserved is rarely what mattered most to the people living through it. That discipline shapes everything I make.</p>
-      <p>In audio, I produce intimate documentary journalism in the tradition of narrative radio: close-mic, slow-burn, character-driven. My current work focuses on Desi communities — their labour, their devotion, their private contradictions — recorded with the rigour of an oral historian and the instincts of a broadcaster.</p>
+      <p>My academic training is in history — in the practice of listening to silences, reading against the grain of records, and looking beyond the texts. That discipline shapes everything I make.</p>
+      <p>In audio, I produce intimate documentary journalism in the tradition of narrative radio: close-mic, slow-burn, character-driven. My current work focuses on South Asian communities. Their struggles, their devotion, their experiences, all recorded with the rigour of an oral historian and the instincts of a broadcaster.</p>
       <p>Photography came from the same impulse. On camera, as on tape, I work with one subject at a time. A train conductor. A smoker caught mid-thought. A shepherd at altitude. Each image is a document as much as it is a picture.</p>
     </div>
   </div>
@@ -873,8 +852,8 @@
 <section id="audio" class="audio-section" style="border-top: 1px solid var(--line);">
   <p class="section-label">Audio Stories</p>
   <div class="audio-intro reveal">
-    <h2>Narrative journalism for people who deserve more than a headline.</h2>
-    <p>Each piece begins where a news article would end — after the event, inside the life. Produced with the patience of archival research and the ear of someone who has spent years learning how memory actually sounds, these stories are built for listening slowly.</p>
+    <h2>Narrative journalism for stories that deserve to be heard.</h2>
+    <p>Each piece delves deeper than a news article — beyond the event, inside the life of the protagonist. Produced with the patience of archival research, these stories are structured for listening actively.</p>
   </div>
 
   <div class="audio-stories js-audio-stories reveal"></div>
@@ -884,7 +863,7 @@
 <div class="pullquote-section">
   <div class="pullquote reveal">
     <span class="pullquote-mark">&ldquo;</span>
-    <blockquote>The historian's job and the journalist's job are the same: to find the person the official record pretended wasn't there.</blockquote>
+    <blockquote>The historian's job and the journalist's job are the same: to find the narrative silenced by the official archive.</blockquote>
     <cite>On method</cite>
   </div>
 </div>
@@ -893,42 +872,40 @@
 <section id="photography" class="photo-section">
   <p class="section-label">Photography</p>
   <div class="photo-intro reveal">
-    <h2>One frame.<br>One person.<br>No context stripped away.</h2>
-    <p>The camera is a different kind of archive. Where audio captures duration — hesitation, breath, the pause before an honest answer — photography holds a single moment accountable. My portraits are built around one subject: a conductor, a smoker, a shepherd catching first light at altitude. I don't crowd the frame. I wait.</p>
+    <h2>One Frame.<br>One Person.<br>One Story.</h2>
+    <p>The camera is a different kind of archive. Where audio captures movement — hesitation, breath, the pause before an honest answer — photography holds a single moment accountable. My portraits are built around one protagonist and their context.</p>
   </div>
 
   <div class="photo-grid js-photo-grid reveal"></div>
-  <p class="photo-upload-note">Replace these placeholder tiles with your own photographs — the layout adapts to your images.</p>
 </section>
 
 <!-- HIRE -->
 <section id="hire" class="hire-section">
   <div class="hire-left reveal">
     <p class="section-label" style="margin-bottom: 2rem;">Work Together</p>
-    <h2>Stories worth telling deserve someone who knows how to find them.</h2>
-    <p>I bring historical method to contemporary journalism — the habit of sitting with a subject long enough to reach the second layer of truth, the patience to return when the first interview wasn't quite enough. I work with publications, cultural institutions, NGOs, and organisations building something that should outlast the news cycle.</p>
-    <a href="#contact" class="hire-cta">Get in touch →</a>
+    <h2>All stories deserve an audience.</h2>
+    <p>I bring archival methods to contemporary journalism — the habit of sitting with a subject long enough to reach the second layer of truth, the patience to return when the first interview wasn't quite enough. I am open to working with publications, cultural institutions, NGOs, and organisations and build something that should outlast the news cycle.</p>
   </div>
 
   <ul class="services-list reveal">
     <li>
       <div>
         <div class="service-name">Audio Documentary</div>
-        <div class="service-desc">Produced narrative audio pieces and podcast series, from fieldwork and oral history recording to final edit.</div>
+        <div class="service-desc">Produced narrative audio pieces and podcast series, from fieldwork and oral history recordings to final edits.</div>
       </div>
       <div class="service-arrow">→</div>
     </li>
     <li>
       <div>
         <div class="service-name">Editorial Photography</div>
-        <div class="service-desc">Portrait sessions, long-form documentary projects, magazine and newspaper commissions.</div>
+        <div class="service-desc">Portrait sessions, long-form documentary projects, fashion editorial campaigns.</div>
       </div>
       <div class="service-arrow">→</div>
     </li>
     <li>
       <div>
         <div class="service-name">Historical Research & Narrative</div>
-        <div class="service-desc">Archive-grounded storytelling for institutions, publications, and commemorative projects.</div>
+        <div class="service-desc">Archive-grounded storytelling for research publications and commemorative projects.</div>
       </div>
       <div class="service-arrow">→</div>
     </li>
@@ -940,45 +917,6 @@
       <div class="service-arrow">→</div>
     </li>
   </ul>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-  <div class="contact-left reveal">
-    <p class="section-label" style="margin-bottom: 2rem;">Contact</p>
-    <h2>Let's make something that lasts.</h2>
-    <p>I respond to every message personally. Whether you have a brief ready or just an idea you want to think through, reach out.</p>
-    <a href="#" class="contact-email js-email"></a>
-  </div>
-
-  <form class="contact-form reveal" onsubmit="return false;">
-    <div class="form-row">
-      <div class="form-field">
-        <label>Name</label>
-        <input type="text" placeholder="Your name">
-      </div>
-      <div class="form-field">
-        <label>Email</label>
-        <input type="email" placeholder="your@email.com">
-      </div>
-    </div>
-    <div class="form-field">
-      <label>What brings you here?</label>
-      <select>
-        <option value="" disabled selected>Select a project type</option>
-        <option>Audio Documentary</option>
-        <option>Editorial Photography</option>
-        <option>Historical Research & Narrative</option>
-        <option>Brand & Institutional Storytelling</option>
-        <option>Something else</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label>Tell me about your project</label>
-      <textarea placeholder="What's the story? Who does it serve? What's the timeline?"></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Send message →</button>
-  </form>
 </section>
 
 <!-- FOOTER -->
@@ -997,8 +935,8 @@
 const CONTENT = {
 
   /* --- Your name / site title --- */
-  siteTitle: "The Untold Archive",        /* appears in nav and footer */
-  pageTitle: "Your Name — Audio Journalist & Photographer",
+  siteTitle: "The Untold Archive — A Project By Herstoriography",
+  pageTitle: "Herstoriography — Audio Journalist & Photographer",
 
   /* --- Contact --- */
   email: "hello@yourname.com",
@@ -1012,29 +950,27 @@ const CONTENT = {
 
   /* --- Audio stories ---
        url: link to SoundCloud / Spotify / wherever the episode lives
-       duration: shown as a tag, e.g. "20 min"
+       duration: shown as a tag, e.g. "14:30"
        tags: up to 3 short labels                                    */
   audio: [
     {
-      title:    "The Waiting Room",
-      desc:     "A woman who has spent thirty years inside government queues. What she has observed, and what she has quietly concluded about power.",
-      url:      "https://soundcloud.com/your-episode-1",
-      duration: "20 min",
-      tags:     ["Bureaucracy", "Persistence"],
+      title:    "Family Secrets, National Scandals",
+      desc:     "When my grandfather uncovered a coup attempt, he reported the plot to protect his country. But that loyalty nearly cost him everything. Decades later, our family comes together to remember the man behind the scandal and the story erased by history.",
+      url:      "https://soundcloud.com/hibahumayun99/family-secrets-national/s-6dAcZpQVGFi?si=3b027dd41b074738b4190ce9fee1ff7a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      tags:     ["History", "Family"],
     },
     {
-      title:    "Pind to Pavement",
-      desc:     "Three generations of a family from a village near Multan, each one holding a different map of where belonging lives.",
-      url:      "https://soundcloud.com/your-episode-2",
-      duration: "34 min",
-      tags:     ["Migration", "Identity"],
+      title:    "On The Run",
+      desc:     "What do you do when you're fugitives of the State and on the run? Simple: You keep score.",
+      url:      "https://soundcloud.com/hibahumayun99/on-the-run/s-qOi5CLcJCTo?si=db4a8c0019b547aeaba7cca50f06387b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      tags:     ["Politics", "Sibling Rivalry"],
     },
     {
-      title:    "The Nightshift Khateeb",
-      desc:     "A mosque caretaker who delivers his most searching sermons at 3 a.m., with no congregation to perform for.",
-      url:      "https://soundcloud.com/your-episode-3",
-      duration: "27 min",
-      tags:     ["Faith", "Solitude"],
+      title:    "Rewriting The Script",
+      desc:     "Krishna loved performing. But one high school teacher made him question everything. Years later, Krishna is changing the script for himself and others like him.",
+      url:      "https://soundcloud.com/hibahumayun99/rewriting-the-script/s-tORwzKGAOsZ?si=287ff0681486426d932ac1cb010d5da2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      duration: "9:42",
+      tags:     ["Theatre", "Solitude"],
     },
   ],
 
@@ -1044,13 +980,21 @@ const CONTENT = {
        subject: the italic label shown on the photo
        location: the small uppercase label                           */
   photos: [
-    { image: "", subject: "The Conductor",  location: "Lahore Railway Station" },
-    { image: "", subject: "The Smoker",     location: "Karachi, after dusk"    },
-    { image: "", subject: "The Ridge",      location: "Gilgit-Baltistan"       },
-    { image: "", subject: "The Chai Wallah",location: "Old Rawalpindi"         },
-    { image: "", subject: "Before Prayer",  location: "Badshahi Mosque"        },
-    { image: "", subject: "The Shepherd",   location: "Swat Valley"            },
-    { image: "", subject: "First Light",    location: "Deosai Plains"          },
+    { image: "images/sb.jpg", subject: "The Conductor",  location: "New York City" },
+    { image: "images/cig2.jpg", subject: "The Smoker",     location: "New York City"    },
+    { image: "images/amma.jpg", subject: "Amma",      location: "Islamabad"       },
+    { image: "images/sh.jpg", subject: "Colors",location: "Rawalpindi"         },
+    { image: "images/umb.jpg", subject: "After Rain",  location: "New York City"        },
+    { image: "images/wheat.jpg", subject: "The Shepherd",   location: "Muzzafarghar"            },
+{ image: "images/ss2.png", subject: "The Surfer",    location: "California"          },
+    { image: "images/ss.jpg", subject: "First Wave",    location: "California"          },
+    { image: "images/povd.jpg", subject: "Roti",location: "Islamabad"         },
+    { image: "images/joy.jpg", subject: "Boyhood",location: "Islamabad"         },
+    { image: "images/onion2.jpg", subject: "The Seller",location: "Islamabad"         },
+    { image: "images/h1.jpg", subject: "Halloween",location: "New York City"         },
+    { image: "images/passanger.jpg", subject: "The Communte",location: "New York City"         },
+    { image: "images/bk2.jpg", subject: "The Bike",location: "New York City"         },
+    { image: "images/bd.jpg", subject: "The Bridge",location: "New York City"         },
   ],
 
 };
@@ -1064,12 +1008,6 @@ document.title = CONTENT.pageTitle;
 
 /* Site name (nav + footer) */
 document.querySelectorAll('.js-site-title').forEach(el => el.textContent = CONTENT.siteTitle);
-
-/* Email */
-document.querySelectorAll('.js-email').forEach(el => {
-  el.href = 'mailto:' + CONTENT.email;
-  el.textContent = CONTENT.email;
-});
 
 /* Social links */
 const socialContainer = document.querySelector('.js-social');
