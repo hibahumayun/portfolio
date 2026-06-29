@@ -243,11 +243,10 @@
     align-self: center;
   }
 
-  /* Photo grid */
+ /* Photo grid */
   .photo-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
 
@@ -256,24 +255,22 @@
     overflow: hidden;
     cursor: pointer;
     background: var(--bg-3);
+    aspect-ratio: 3/4;
   }
 
-  .photo-card:nth-child(1) { grid-column: 1 / 6; grid-row: 1 / 3; aspect-ratio: 3/4; }
-  .photo-card:nth-child(2) { grid-column: 6 / 10; grid-row: 1; aspect-ratio: 4/3; }
-  .photo-card:nth-child(3) { grid-column: 10 / 13; grid-row: 1; aspect-ratio: 3/4; }
-  .photo-card:nth-child(4) { grid-column: 6 / 9; grid-row: 2; aspect-ratio: 4/3; }
-  .photo-card:nth-child(5) { grid-column: 9 / 13; grid-row: 2 / 4; aspect-ratio: 3/4; }
-  .photo-card:nth-child(6) { grid-column: 1 / 5; grid-row: 3; aspect-ratio: 4/3; }
-  .photo-card:nth-child(7) { grid-column: 5 / 9; grid-row: 3; aspect-ratio: 4/3; }
+  .photo-card:nth-child(4n+1) { aspect-ratio: 3/4; }
+  .photo-card:nth-child(4n+2) { aspect-ratio: 4/3; }
+  .photo-card:nth-child(4n+3) { aspect-ratio: 4/3; }
+  .photo-card:nth-child(4n+4) { aspect-ratio: 3/4; }
 
-  .photo-placeholder {
+.photo-placeholder {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: flex-end;
     padding: 1.2rem;
-    min-height: 200px;
   }
 
   /* Each photo gets a distinct tone */
@@ -795,8 +792,7 @@
     .hero { padding: 0 1.5rem 4rem; }
     .about, .hire-section, .contact-section { grid-template-columns: 1fr; gap: 3rem; }
     .photo-intro, .audio-intro { grid-template-columns: 1fr; gap: 2rem; }
-    .photo-grid { display: flex; flex-direction: column; }
-    .photo-card { aspect-ratio: 4/3 !important; }
+.photo-grid { grid-template-columns: repeat(2, 1fr); }    .photo-card { aspect-ratio: 4/3 !important; }
     .story-card { grid-template-columns: 3rem 1fr auto; gap: 1rem; }
     .story-num { font-size: 2rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -829,7 +825,7 @@
   <div class="hero-bg"></div>
   <p class="hero-eyebrow">Audio Journalist · Photographer · Historian</p>
   <h1 class="hero-headline">Every person has a story.</h1>
-  <p class="hero-sub">I document the stories around me — trained as a historian, working as a journalist, I am drawn to narratives that are often pushed to the margins.</p>
+  <p class="hero-sub">I document the stories around me — trained as a historian, working as a journalist, I am drawn to narratives that are often silenced and sidelined.</p>
   <a href="#audio" class="hero-cta">Explore the work <span class="arrow">→</span></a>
 </section>
 
@@ -841,9 +837,9 @@
       History includes those named in the narratives as well as those silenced in the archive. I aim to bring the latter to the forefront.
     </div>
     <div class="about-body">
-      <p>My academic training is in history — in the practice of listening to silences, reading against the grain of records, and looking beyond the texts. That discipline shapes everything I make.</p>
-      <p>In audio, I produce intimate documentary journalism in the tradition of narrative radio: close-mic, slow-burn, character-driven. My current work focuses on South Asian communities. Their struggles, their devotion, their experiences, all recorded with the rigour of an oral historian and the instincts of a broadcaster.</p>
-      <p>Photography came from the same impulse. On camera, as on tape, I work with one subject at a time. A train conductor. A smoker caught mid-thought. A shepherd at altitude. Each image is a document as much as it is a picture.</p>
+      <p>My academic training is in history — in the practice of listening to silences, reading against the grain of records, and looking beyond the texts. This discipline shapes everything I make.</p>
+      <p>In audio, I produce intimate documentary journalism in the tradition of narrative radio: close-mic, slow-burn, character-driven. My current work focuses on South Asian communities; their struggles, their devotion, their experiences.</p>
+      <p>Photography comes from the same impulse. On camera, as on tape, I work with one subject at a time. A train conductor. A smoker caught mid-thought. A shepherd at altitude. Each image is a document as much as it is a picture.</p>
     </div>
   </div>
 </section>
@@ -853,7 +849,7 @@
   <p class="section-label">Audio Stories</p>
   <div class="audio-intro reveal">
     <h2>Narrative journalism for stories that deserve to be heard.</h2>
-    <p>Each piece delves deeper than a news article — beyond the event, inside the life of the protagonist. Produced with the patience of archival research, these stories are structured for listening actively.</p>
+    <p>Each piece delves deep into the story, beyond the event, inside the life of the protagonist.</p>
   </div>
 
   <div class="audio-stories js-audio-stories reveal"></div>
@@ -863,7 +859,7 @@
 <div class="pullquote-section">
   <div class="pullquote reveal">
     <span class="pullquote-mark">&ldquo;</span>
-    <blockquote>The historian's job and the journalist's job are the same: to find the narrative silenced by the official archive.</blockquote>
+    <blockquote>The historian's job and the journalist's job are the same: to find the narratives silenced by official archives.</blockquote>
     <cite>On method</cite>
   </div>
 </div>
@@ -884,7 +880,7 @@
   <div class="hire-left reveal">
     <p class="section-label" style="margin-bottom: 2rem;">Work Together</p>
     <h2>All stories deserve an audience.</h2>
-    <p>I bring archival methods to contemporary journalism — the habit of sitting with a subject long enough to reach the second layer of truth, the patience to return when the first interview wasn't quite enough. I am open to working with publications, cultural institutions, NGOs, and organisations and build something that should outlast the news cycle.</p>
+    <p>I bring archival methods to contemporary journalism — the habit of sitting with a subject long enough to reach the second layer of truth, the patience to return when the first interview wasn't quite enough. I am open to working with publications, cultural institutions, NGOs, and organisations and build something that outlasts news cycles.</p>
   </div>
 
   <ul class="services-list reveal">
@@ -982,7 +978,7 @@ const CONTENT = {
   photos: [
     { image: "images/sb.jpg", subject: "The Conductor",  location: "New York City" },
     { image: "images/cig2.jpg", subject: "The Smoker",     location: "New York City"    },
-    { image: "images/amma.jpg", subject: "Amma",      location: "Islamabad"       },
+    { image: "images/amma.png", subject: "Amma",      location: "Islamabad"       },
     { image: "images/sh.jpg", subject: "Colors",location: "Rawalpindi"         },
     { image: "images/umb.jpg", subject: "After Rain",  location: "New York City"        },
     { image: "images/wheat.jpg", subject: "The Shepherd",   location: "Muzzafarghar"            },
